@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NODO Services | Coming Soon</title>
+  <title>NODO | Coming Soon</title>
   <meta
     name="description"
-    content="NODO Services is building a trusted Canadian marketplace connecting clients with service providers."
+    content="NODO is building a trusted Canadian marketplace connecting clients with service providers."
   />
   <style>
     :root {
-      --primary: #0FB9B1;
-      --primary-dark: #0A8F89;
-      --secondary: #123B5D;
-      --bg: #F5F7FA;
+      --primary: #EAB308;
+      --primary-dark: #CA8A04;
+      --secondary: #0F172A;
+      --secondary-2: #334155;
+      --bg: #F8FAFC;
+      --bg-soft: #EEF2F7;
       --white: #FFFFFF;
-      --text: #1F2A37;
-      --muted: #6B7280;
-      --border: #D9E2EC;
-      --shadow: 0 10px 30px rgba(18, 59, 93, 0.10);
-      --radius: 18px;
+      --text: #0F172A;
+      --muted: #475569;
+      --border: #E2E8F0;
+      --shadow: 0 12px 32px rgba(15, 23, 42, 0.10);
+      --radius: 20px;
       --max-width: 1180px;
     }
 
@@ -56,12 +58,13 @@
     }
 
     .topbar {
-      padding: 22px 0;
-      background: var(--white);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
+      padding: 18px 0;
+      background: rgba(15, 23, 42, 0.96);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       position: sticky;
       top: 0;
       z-index: 20;
+      backdrop-filter: blur(10px);
     }
 
     .nav {
@@ -72,10 +75,10 @@
     }
 
     .logo {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--secondary);
+      font-size: 1.6rem;
+      font-weight: 800;
       letter-spacing: 0.5px;
+      color: var(--white);
     }
 
     .logo span {
@@ -90,13 +93,13 @@
     }
 
     .nav-links a {
-      color: var(--muted);
+      color: rgba(255,255,255,0.82);
       font-size: 0.95rem;
       transition: 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--secondary);
+      color: var(--primary);
     }
 
     .btn {
@@ -113,7 +116,7 @@
 
     .btn-primary {
       background: var(--primary);
-      color: var(--white);
+      color: var(--secondary);
       box-shadow: var(--shadow);
     }
 
@@ -123,34 +126,35 @@
     }
 
     .btn-outline {
-      border: 1.5px solid var(--secondary);
-      color: var(--secondary);
+      border: 1.5px solid rgba(255,255,255,0.70);
+      color: var(--white);
       background: transparent;
     }
 
     .btn-outline:hover {
-      background: rgba(18, 59, 93, 0.06);
+      background: rgba(255,255,255,0.08);
     }
 
     .hero {
-      padding: 80px 0 56px;
+      padding: 90px 0 64px;
       background:
-        radial-gradient(circle at top right, rgba(15, 185, 177, 0.18), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+        radial-gradient(circle at top right, rgba(234, 179, 8, 0.16), transparent 25%),
+        linear-gradient(180deg, #1E293B 0%, #0F172A 100%);
+      color: var(--white);
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 34px;
+      gap: 36px;
       align-items: center;
     }
 
     .badge {
       display: inline-block;
-      background: rgba(15, 185, 177, 0.12);
-      color: var(--primary-dark);
-      border: 1px solid rgba(15, 185, 177, 0.18);
+      background: rgba(234, 179, 8, 0.12);
+      color: #FCD34D;
+      border: 1px solid rgba(234, 179, 8, 0.35);
       padding: 8px 14px;
       border-radius: 999px;
       font-size: 0.9rem;
@@ -159,10 +163,10 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.08;
-      color: var(--secondary);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.04;
       margin-bottom: 18px;
+      max-width: 700px;
     }
 
     .hero h1 span {
@@ -171,8 +175,8 @@
 
     .hero p {
       font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 640px;
+      color: rgba(255,255,255,0.82);
+      max-width: 620px;
       margin-bottom: 28px;
     }
 
@@ -180,24 +184,25 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
 
     .hero-note {
-      color: var(--muted);
+      color: rgba(255,255,255,0.72);
       font-size: 0.95rem;
     }
 
     .hero-card {
-      background: var(--white);
-      border-radius: var(--radius);
+      background: rgba(255,255,255,0.08);
+      border-radius: 24px;
       padding: 28px;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(18, 59, 93, 0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(6px);
     }
 
     .hero-card h3 {
-      color: var(--secondary);
+      color: var(--white);
       margin-bottom: 14px;
       font-size: 1.15rem;
     }
@@ -210,26 +215,26 @@
 
     .hero-list li {
       padding: 12px 14px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,0.10);
       border-radius: 14px;
-      background: #fbfcfd;
-      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.9);
       font-size: 0.96rem;
     }
 
     .section {
-      padding: 72px 0;
+      padding: 76px 0;
     }
 
     .section-title {
       text-align: center;
-      max-width: 720px;
-      margin: 0 auto 40px;
+      max-width: 760px;
+      margin: 0 auto 42px;
     }
 
     .section-title h2 {
       color: var(--secondary);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
       margin-bottom: 12px;
     }
 
@@ -246,9 +251,9 @@
 
     .card {
       background: var(--white);
-      padding: 24px;
+      padding: 26px;
       border-radius: var(--radius);
-      border: 1px solid rgba(18, 59, 93, 0.06);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
     }
 
@@ -263,6 +268,10 @@
       font-size: 0.96rem;
     }
 
+    .services-section {
+      background: var(--bg-soft);
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -271,10 +280,10 @@
 
     .service-item {
       background: var(--white);
-      border-radius: 16px;
-      padding: 20px 18px;
+      border-radius: 18px;
+      padding: 22px 18px;
       text-align: center;
-      border: 1px solid rgba(18, 59, 93, 0.06);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
       font-weight: 700;
       color: var(--secondary);
@@ -291,7 +300,7 @@
       border-radius: var(--radius);
       padding: 28px;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(18, 59, 93, 0.06);
+      border: 1px solid var(--border);
     }
 
     .panel h3 {
@@ -314,14 +323,14 @@
     }
 
     .cta {
-      padding: 72px 0;
+      padding: 76px 0;
     }
 
     .cta-box {
-      background: linear-gradient(135deg, var(--secondary), #0b2f4c);
+      background: linear-gradient(135deg, #1E293B, #0F172A);
       color: var(--white);
-      border-radius: 24px;
-      padding: 44px 32px;
+      border-radius: 28px;
+      padding: 48px 32px;
       text-align: center;
       box-shadow: var(--shadow);
     }
@@ -334,16 +343,12 @@
     .cta-box p {
       max-width: 700px;
       margin: 0 auto 22px;
-      color: rgba(255,255,255,0.86);
-    }
-
-    .cta-box .btn-primary {
-      background: var(--primary);
+      color: rgba(255,255,255,0.82);
     }
 
     .footer {
-      background: var(--white);
-      border-top: 1px solid rgba(18, 59, 93, 0.06);
+      background: var(--secondary);
+      border-top: 1px solid rgba(255,255,255,0.06);
       padding: 30px 0;
     }
 
@@ -353,7 +358,7 @@
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
-      color: var(--muted);
+      color: rgba(255,255,255,0.72);
       font-size: 0.95rem;
     }
 
@@ -402,7 +407,7 @@
 <body>
   <header class="topbar">
     <div class="container nav">
-      <div class="logo">NODO <span>Services</span></div>
+      <div class="logo">NO<span>DO</span></div>
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -416,11 +421,11 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="badge">Coming Soon</div>
-        <h1>A smarter way to connect with <span>trusted services</span> in Canada.</h1>
+        <div class="badge">COMING SOON</div>
+        <h1>Find the <span>right expert</span> for the service you need.</h1>
         <p>
-          NODO Services is building a modern marketplace that connects clients
-          with reliable service providers through a simple, professional, and trusted experience.
+          NODO is building a stronger and more professional way to connect clients
+          with trusted service providers across Canada.
         </p>
 
         <div class="hero-actions">
@@ -429,17 +434,17 @@
         </div>
 
         <div class="hero-note">
-          Simple. Trusted. Professional.
+          Direct access to the expert you need.
         </div>
       </div>
 
       <div class="hero-card">
-        <h3>What we are building</h3>
+        <h3>Why NODO</h3>
         <ul class="hero-list">
-          <li>Easy service discovery for clients</li>
-          <li>Opportunities for independent providers</li>
-          <li>Clear and modern marketplace experience</li>
-          <li>Built for trust, growth, and convenience</li>
+          <li>Modern service marketplace</li>
+          <li>Clear and professional user experience</li>
+          <li>Designed for clients and providers</li>
+          <li>Built with trust, visibility, and speed</li>
         </ul>
       </div>
     </div>
@@ -450,7 +455,7 @@
       <div class="section-title">
         <h2>Who we are</h2>
         <p>
-          NODO Services is preparing a trusted platform designed to make it easier
+          NODO is preparing a trusted platform designed to make it easier
           for people and businesses to find the right service providers.
         </p>
       </div>
@@ -459,7 +464,7 @@
         <div class="card">
           <h3>Trusted Marketplace</h3>
           <p>
-            We want to create a simple and reliable experience where clients can
+            We are building a simple and reliable experience where clients can
             connect with service providers more confidently.
           </p>
         </div>
@@ -475,7 +480,7 @@
         <div class="card">
           <h3>Simple and Professional</h3>
           <p>
-            Our focus is clarity, trust, and ease of use, both for clients looking
+            Our focus is clarity, trust, and ease of use for both clients looking
             for help and providers looking for opportunities.
           </p>
         </div>
@@ -483,17 +488,17 @@
     </div>
   </section>
 
-  <section id="services" class="section" style="background: #eef4f7;">
+  <section id="services" class="section services-section">
     <div class="container">
       <div class="section-title">
-        <h2>Service categories</h2>
+        <h2>Service Categories</h2>
         <p>
-          Here are some of the service categories planned for the platform.
+          Discover a growing network of trusted services for homes, businesses, and urgent needs.
         </p>
       </div>
 
       <div class="services-grid">
-        <div class="service-item">House Cleaning</div>
+        <div class="service-item">Cleaning</div>
         <div class="service-item">Plumbing</div>
         <div class="service-item">Electrical</div>
         <div class="service-item">Painting</div>
@@ -510,7 +515,7 @@
       <div class="section-title">
         <h2>Designed for clients and providers</h2>
         <p>
-          NODO Services is being built to support both sides of the marketplace.
+          NODO is being built to support both sides of the marketplace with a more modern and efficient experience.
         </p>
       </div>
 
@@ -541,7 +546,7 @@
   <section class="cta">
     <div class="container">
       <div class="cta-box">
-        <h2>NODO Services is coming soon</h2>
+        <h2>NODO is coming soon</h2>
         <p>
           We are building a trusted, modern, and practical way to connect services across Canada.
         </p>
@@ -553,14 +558,14 @@
   <footer id="contact" class="footer">
     <div class="container footer-inner">
       <div>
-        <strong>NODO Services</strong><br />
-        Coming Soon in Canada
+        <strong style="color:#FFFFFF;">NODO</strong><br />
+        Trusted service connections in Canada
       </div>
       <div>
         Email: your@email.com
       </div>
       <div>
-        © 2026 NODO Services. All rights reserved.
+        © 2026 NODO. All rights reserved.
       </div>
     </div>
   </footer>
