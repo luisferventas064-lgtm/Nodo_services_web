@@ -11,6 +11,113 @@
   margin-top: 24px;
 }
 
+.nodo-logo-reveal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 112px;
+  gap: 24px;
+  padding: 14px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  background: #0f172a;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+}
+
+.nodo-logo-reveal__canvas {
+  position: relative;
+  width: 172px;
+  height: 82px;
+  flex: 0 0 auto;
+}
+
+.nodo-logo-reveal__logo {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+  animation: nodo-logo-reveal-art 2.2s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+}
+
+.nodo-logo-reveal__dot {
+  position: absolute;
+  top: 36px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #eab308;
+  box-shadow: 0 2px 5px rgba(154, 106, 0, 0.18);
+  opacity: 0;
+  z-index: 1;
+}
+
+.nodo-logo-reveal__dot--one {
+  left: 24px;
+  animation: nodo-logo-dot-one 2.2s ease forwards;
+}
+
+.nodo-logo-reveal__dot--two {
+  left: 81px;
+  animation: nodo-logo-dot-two 2.2s ease forwards;
+}
+
+.nodo-logo-reveal__dot--three {
+  left: 138px;
+  animation: nodo-logo-dot-three 2.2s ease forwards;
+}
+
+.nodo-logo-reveal__message {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: nodo-logo-message 0.9s ease-out 2.55s forwards;
+}
+
+.nodo-logo-reveal__year {
+  color: #eab308;
+}
+
+@keyframes nodo-logo-dot-one {
+  0%, 8% { opacity: 0; transform: translate(-8px, 0) scale(0.45); }
+  22%, 58% { opacity: 1; transform: translate(0, 0) scale(1); }
+  82% { opacity: 1; transform: translate(48px, 0) scale(0.75); }
+  100% { opacity: 0; transform: translate(48px, 0) scale(0.35); }
+}
+
+@keyframes nodo-logo-dot-two {
+  0%, 20% { opacity: 0; transform: translateY(-16px) scale(0.45); }
+  36%, 58% { opacity: 1; transform: translateY(0) scale(1); }
+  82% { opacity: 1; transform: translateX(0) scale(0.75); }
+  100% { opacity: 0; transform: translateX(0) scale(0.35); }
+}
+
+@keyframes nodo-logo-dot-three {
+  0%, 32% { opacity: 0; transform: translate(8px, 0) scale(0.45); }
+  48%, 58% { opacity: 1; transform: translate(0, 0) scale(1); }
+  82% { opacity: 1; transform: translate(-48px, 0) scale(0.75); }
+  100% { opacity: 0; transform: translate(-48px, 0) scale(0.35); }
+}
+
+@keyframes nodo-logo-reveal-art {
+  0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+  25% { opacity: 1; }
+  100% { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+
+@keyframes nodo-logo-message {
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Get App lives in the footer; remove the nested page padding accumulation. */
 main.nodo-page-shell:has(> .nodo-public-home) {
   padding-bottom: 24px;
@@ -399,6 +506,22 @@ main.nodo-page-shell:has(> .nodo-public-home) {
 }
 
 @media (max-width: 640px) {
+  .nodo-logo-reveal {
+    min-height: 126px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 18px;
+  }
+
+  .nodo-logo-reveal__canvas {
+    width: 156px;
+    height: 74px;
+  }
+
+  .nodo-logo-reveal__message {
+    font-size: 1rem;
+  }
+
   .nodo-public-home .nodo-hero-redesign {
     min-height: 560px;
     padding: 24px;
@@ -471,5 +594,19 @@ main.nodo-page-shell:has(> .nodo-public-home) {
     height: 18px;
     margin-top: 0;
     color: #EAB308;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nodo-logo-reveal__dot {
+    display: none;
+  }
+
+  .nodo-logo-reveal__logo,
+  .nodo-logo-reveal__message {
+    animation: none;
+    clip-path: none;
+    opacity: 1;
+    transform: none;
   }
 }
