@@ -1,573 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NODO | Coming Soon</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F172A">
+  <meta name="application-name" content="NODO">
+  <meta name="apple-mobile-web-app-title" content="NODO">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title data-i18n="pageTitle">NODO | Find &amp; Book Trusted Services</title>
   <meta
     name="description"
-    content="NODO is building a trusted Canadian marketplace connecting clients with service providers."
-  />
-  <style>
-    :root {
-      --primary: #EAB308;
-      --primary-dark: #CA8A04;
-      --secondary: #0F172A;
-      --secondary-2: #334155;
-      --bg: #F8FAFC;
-      --bg-soft: #EEF2F7;
-      --white: #FFFFFF;
-      --text: #0F172A;
-      --muted: #475569;
-      --border: #E2E8F0;
-      --shadow: 0 12px 32px rgba(15, 23, 42, 0.10);
-      --radius: 20px;
-      --max-width: 1180px;
-    }
+    content="NODO connects customers with trusted service providers across Quebec and Canada."
+    data-i18n-content="metaDescription"
+  >
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="/static/icons/favicon.ico?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=2">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/static/icons/favicon.svg?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/static/site.webmanifest?v=1">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(92%, var(--max-width));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      padding: 18px 0;
-      background: rgba(15, 23, 42, 0.96);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: var(--white);
-    }
-
-    .logo span {
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.82);
-      font-size: 0.95rem;
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: 0.2s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: var(--secondary);
-      box-shadow: var(--shadow);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      border: 1.5px solid rgba(255,255,255,0.70);
-      color: var(--white);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero {
-      padding: 90px 0 64px;
-      background:
-        radial-gradient(circle at top right, rgba(234, 179, 8, 0.16), transparent 25%),
-        linear-gradient(180deg, #1E293B 0%, #0F172A 100%);
-      color: var(--white);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(234, 179, 8, 0.12);
-      color: #FCD34D;
-      border: 1px solid rgba(234, 179, 8, 0.35);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 4.2rem);
-      line-height: 1.04;
-      margin-bottom: 18px;
-      max-width: 700px;
-    }
-
-    .hero h1 span {
-      color: var(--primary);
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.82);
-      max-width: 620px;
-      margin-bottom: 28px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
-    }
-
-    .hero-note {
-      color: rgba(255,255,255,0.72);
-      font-size: 0.95rem;
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.10);
-      backdrop-filter: blur(6px);
-    }
-
-    .hero-card h3 {
-      color: var(--white);
-      margin-bottom: 14px;
-      font-size: 1.15rem;
-    }
-
-    .hero-list {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .hero-list li {
-      padding: 12px 14px;
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.06);
-      color: rgba(255,255,255,0.9);
-      font-size: 0.96rem;
-    }
-
-    .section {
-      padding: 76px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 42px;
-    }
-
-    .section-title h2 {
-      color: var(--secondary);
-      font-size: clamp(1.9rem, 3vw, 2.8rem);
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      background: var(--white);
-      padding: 26px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      color: var(--secondary);
-      margin-bottom: 10px;
-      font-size: 1.08rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .services-section {
-      background: var(--bg-soft);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .service-item {
-      background: var(--white);
-      border-radius: 18px;
-      padding: 22px 18px;
-      text-align: center;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      font-weight: 700;
-      color: var(--secondary);
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .panel {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .panel h3 {
-      color: var(--secondary);
-      margin-bottom: 14px;
-      font-size: 1.2rem;
-    }
-
-    .panel ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      color: var(--muted);
-    }
-
-    .panel ul li::before {
-      content: "• ";
-      color: var(--primary);
-      font-weight: bold;
-    }
-
-    .cta {
-      padding: 76px 0;
-    }
-
-    .cta-box {
-      background: linear-gradient(135deg, #1E293B, #0F172A);
-      color: var(--white);
-      border-radius: 28px;
-      padding: 48px 32px;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-box h2 {
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      margin-bottom: 14px;
-    }
-
-    .cta-box p {
-      max-width: 700px;
-      margin: 0 auto 22px;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .footer {
-      background: var(--secondary);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 30px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      color: rgba(255,255,255,0.72);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .cards,
-      .services-grid,
-      .split {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        gap: 12px;
-      }
-
-      .hero {
-        padding-top: 56px;
-      }
-
-      .hero-grid,
-      .cards,
-      .services-grid,
-      .split {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/nodo-design-system.css">
+  <link rel="stylesheet" href="/static/css/nodo-client-page-spacing.css">
+  <link rel="stylesheet" href="/static/css/nodo-public-home-recovery.css">
+  <link rel="stylesheet" href="/static/css/nodo-home-video.css">
 </head>
-<body>
-  <header class="topbar">
-    <div class="container nav">
-      <div class="logo">NO<span>DO</span></div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#clients-providers">How It Works</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="btn btn-primary">Coming Soon</a>
-      </nav>
+<body class="nodo-app">
+  <div class="nodo-shell nodo-shell--public-home">
+    <header class="nodo-header nodo-header--authenticated nodo-header--public-home">
+      <div class="nodo-header-container nodo-header-container--public-home">
+        <div class="nodo-header-left">
+          <a href="/" class="nodo-logo nodo-logo--public-home" aria-label="NODO home" data-i18n-aria-label="homeLabel">
+            <img src="/static/icons/LogoBL-Am.svg" alt="NODO" class="nodo-navbar-logo" loading="lazy">
+          </a>
+        </div>
+        <div class="nodo-header-right nodo-header-right--public-home">
+          <a href="#" class="nodo-link nodo-link--authenticated is-disabled-link" aria-disabled="true" data-i18n="headerLogin">Log in</a>
+          <a href="#" class="nodo-link nodo-link--authenticated is-disabled-link" aria-disabled="true" data-i18n="headerSignup">Sign up</a>
+          <div class="nodo-lang">
+            <div class="lang-toggle" aria-label="Language selector" data-i18n-aria-label="languageSelector">
+              <button type="button" class="lang-toggle__option" data-lang-option="fr" aria-pressed="false" aria-label="Français">FR</button>
+              <span class="lang-toggle__divider" aria-hidden="true"></span>
+              <button type="button" class="lang-toggle__option" data-lang-option="en" aria-pressed="true" aria-label="English">EN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main class="page nodo-page-shell" id="main-content">
+    <div class="nodo-public-home nodo-page nodo-stack">
+      <section class="nodo-section nodo-hero nodo-hero--dark nodo-fade-in nodo-hero-redesign" id="top">
+        <img src="/static/icons/heroteamhome.svg" alt="NODO team" class="nodo-hero-team-img" loading="lazy" data-i18n-alt="teamImage">
+        <div class="nodo-hero-overlay">
+          <div class="nodo-hero-redesign-copy">
+            <span class="nodo-hero-kicker nodo-hero-redesign-kicker" data-i18n="heroKicker">Trusted local marketplace</span>
+            <h1 class="nodo-hero-title nodo-hero-redesign-title" data-i18n="heroTitle">Find &amp; book trusted local services.</h1>
+            <p class="nodo-hero-text nodo-hero-redesign-text" data-i18n="heroText">
+              NODO connects customers with trusted providers across Quebec and Canada. Search by service type and filter results with verified requirements.
+            </p>
+            <div class="nodo-hero-services" aria-label="Popular services" data-i18n-aria-label="popularServices">
+              <div class="nodo-hero-service-item">
+                <a class="nodo-hero-service-card is-disabled-link" href="#" aria-label="Plumbing" aria-disabled="true" data-i18n-aria-label="servicePlumbing">
+                  <img src="/static/icons/plomeria.svg" alt="Plumbing" loading="lazy" data-i18n-alt="servicePlumbing">
+                </a>
+                <span class="nodo-hero-service-label" data-i18n="servicePlumbing">Plumbing</span>
+              </div>
+              <div class="nodo-hero-service-item">
+                <a class="nodo-hero-service-card is-disabled-link" href="#" aria-label="Cleaning" aria-disabled="true" data-i18n-aria-label="serviceCleaning">
+                  <img src="/static/icons/clean.svg" alt="Cleaning" loading="lazy" data-i18n-alt="serviceCleaning">
+                </a>
+                <span class="nodo-hero-service-label" data-i18n="serviceCleaning">Cleaning</span>
+              </div>
+              <div class="nodo-hero-service-item">
+                <a class="nodo-hero-service-card is-disabled-link" href="#" aria-label="Locksmith" aria-disabled="true" data-i18n-aria-label="serviceLocksmith">
+                  <img src="/static/icons/llaves.svg" alt="Locksmith" loading="lazy" data-i18n-alt="serviceLocksmith">
+                </a>
+                <span class="nodo-hero-service-label" data-i18n="serviceLocksmith">Locksmith</span>
+              </div>
+              <div class="nodo-hero-service-item">
+                <a class="nodo-hero-service-card is-disabled-link" href="#" aria-label="Construction" aria-disabled="true" data-i18n-aria-label="serviceConstruction">
+                  <img src="/static/icons/construccion.svg" alt="Construction" loading="lazy" data-i18n-alt="serviceConstruction">
+                </a>
+                <span class="nodo-hero-service-label" data-i18n="serviceConstruction">Construction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="clients-providers" class="nodo-section nodo-role-showcase nodo-role-showcase--navy-icons nodo-stack">
+        <div class="nodo-role-showcase__intro">
+          <div class="nodo-role-showcase__copy nodo-stack">
+            <h2 class="nodo-section-title nodo-role-showcase__title" data-i18n="rolesTitle">One platform, three roles</h2>
+            <span class="nodo-role-showcase__underline" aria-hidden="true"></span>
+            <p class="nodo-role-showcase__text" data-i18n="rolesText">
+              NODO supports discovery, coordination, and execution with a clear experience for every role in the service flow.
+            </p>
+          </div>
+        </div>
+        <div class="nodo-grid nodo-feature-grid nodo-role-showcase__grid">
+          <a href="#" class="nodo-role-card nodo-role-card--client is-disabled-link" aria-disabled="true">
+            <div class="nodo-role-card__header">
+              <span class="nodo-role-card__icon" aria-hidden="true">
+                <img src="/static/icons/usuario.svg" alt="Customer" loading="lazy" data-i18n-alt="customerLabel">
+              </span>
+            </div>
+            <h3 class="nodo-role-card__title" data-i18n="customerLabel">Customer</h3>
+            <span class="nodo-role-card__underline" aria-hidden="true"></span>
+            <ul class="nodo-role-card__list">
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="customerBullet1">Find services faster</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="customerBullet2">Connect with trusted providers</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="customerBullet3">Enjoy a simple and clear process</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="customerBullet4">Access a more professional experience</span></li>
+            </ul>
+          </a>
+
+          <a href="#" class="nodo-role-card nodo-role-card--provider is-disabled-link" aria-disabled="true">
+            <div class="nodo-role-card__header">
+              <span class="nodo-role-card__icon" aria-hidden="true">
+                <img src="/static/icons/PROVEDOR.svg" alt="Providers" loading="lazy" data-i18n-alt="providerLabel">
+              </span>
+            </div>
+            <h3 class="nodo-role-card__title" data-i18n="providerLabel">Providers</h3>
+            <span class="nodo-role-card__underline" aria-hidden="true"></span>
+            <ul class="nodo-role-card__list">
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="providerBullet1">Show your services professionally</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="providerBullet2">Reach more potential clients</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="providerBullet3">Grow your visibility</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="providerBullet4">Be part of a modern service platform</span></li>
+            </ul>
+          </a>
+
+          <a href="#" class="nodo-role-card nodo-role-card--worker is-disabled-link" aria-disabled="true">
+            <div class="nodo-role-card__header">
+              <span class="nodo-role-card__icon" aria-hidden="true">
+                <img src="/static/icons/trabajador.svg" alt="Workers" loading="lazy" data-i18n-alt="workerLabel">
+              </span>
+            </div>
+            <h3 class="nodo-role-card__title" data-i18n="workerLabel">Workers</h3>
+            <span class="nodo-role-card__underline" aria-hidden="true"></span>
+            <ul class="nodo-role-card__list">
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="workerBullet1">Accept opportunities when providers need support</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="workerBullet2">Work with more flexibility</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="workerBullet3">Join the service flow in a structured way</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="workerBullet4">Build visibility through the platform</span></li>
+            </ul>
+          </a>
+        </div>
+      </section>
+
+      <section class="nodo-section nodo-how-it-works nodo-stack">
+        <div class="nodo-how-it-works__header nodo-stack">
+          <h2 class="nodo-section-title nodo-how-it-works__title" data-i18n="howTitle">How it works</h2>
+          <p class="nodo-how-it-works__subtitle" data-i18n="howSubtitle">Find trusted providers in three simple steps.</p>
+        </div>
+        <div class="nodo-how-it-works__flow" aria-label="How it works steps" data-i18n-aria-label="howStepsLabel">
+          <article class="nodo-how-it-works__card">
+            <span class="nodo-how-it-works__number">01</span>
+            <div class="nodo-how-it-works__icon-wrap" aria-hidden="true"><img src="/static/icons/buscar.svg" alt="" class="nodo-how-it-works__icon" loading="lazy"></div>
+            <h3 class="nodo-how-it-works__card-title" data-i18n="howStep1Title">Choose a service</h3>
+            <p class="nodo-how-it-works__card-text" data-i18n="howStep1Text">Browse categories and select the service you need.</p>
+          </article>
+          <div class="nodo-how-it-works__connector" aria-hidden="true"><img src="/static/icons/arrowcircle.svg" alt="" loading="lazy"></div>
+          <article class="nodo-how-it-works__card">
+            <span class="nodo-how-it-works__number">02</span>
+            <div class="nodo-how-it-works__icon-wrap" aria-hidden="true"><img src="/static/icons/checkshieldCERITICATELINEAL.svg" alt="" class="nodo-how-it-works__icon" loading="lazy"></div>
+            <h3 class="nodo-how-it-works__card-title" data-i18n="howStep2Title">Request confidently</h3>
+            <p class="nodo-how-it-works__card-text" data-i18n="howStep2Text">Compare verified providers and submit your request.</p>
+          </article>
+          <div class="nodo-how-it-works__connector" aria-hidden="true"><img src="/static/icons/arrowcircle.svg" alt="" loading="lazy"></div>
+          <article class="nodo-how-it-works__card">
+            <span class="nodo-how-it-works__number">03</span>
+            <div class="nodo-how-it-works__icon-wrap" aria-hidden="true"><img src="/static/icons/checkmarkCircle.svg" alt="" class="nodo-how-it-works__icon" loading="lazy"></div>
+            <h3 class="nodo-how-it-works__card-title" data-i18n="howStep3Title">Track &amp; close</h3>
+            <p class="nodo-how-it-works__card-text" data-i18n="howStep3Text">Follow progress, complete the service and leave a review.</p>
+          </article>
+        </div>
+      </section>
     </div>
-  </header>
+  </main>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="badge">COMING SOON</div>
-        <h1>Find the <span>right expert</span> for the service you need.</h1>
-        <p>
-          NODO is building a stronger and more professional way to connect clients
-          with trusted service providers across Canada.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Stay Updated</a>
-          <a href="#services" class="btn btn-outline">Explore Services</a>
-        </div>
-
-        <div class="hero-note">
-          Direct access to the expert you need.
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <h3>Why NODO</h3>
-        <ul class="hero-list">
-          <li>Modern service marketplace</li>
-          <li>Clear and professional user experience</li>
-          <li>Designed for clients and providers</li>
-          <li>Built with trust, visibility, and speed</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Who we are</h2>
-        <p>
-          NODO is preparing a trusted platform designed to make it easier
-          for people and businesses to find the right service providers.
-        </p>
-      </div>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Trusted Marketplace</h3>
-          <p>
-            We are building a simple and reliable experience where clients can
-            connect with service providers more confidently.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Built for Canada</h3>
-          <p>
-            NODO is designed with a professional local approach for Canadian users,
-            providers, and service businesses.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Simple and Professional</h3>
-          <p>
-            Our focus is clarity, trust, and ease of use for both clients looking
-            for help and providers looking for opportunities.
-          </p>
+  <footer class="nodo-footer nodo-footer--home">
+    <section class="nodo-footer__promo-wrap" aria-labelledby="app">
+      <div class="nodo-footer__inner">
+        <div class="nodo-footer__promo">
+          <div class="nodo-footer__content">
+            <h3 id="app" class="nodo-footer__title" data-i18n="getApp">Get the app</h3>
+            <p class="nodo-footer__text" data-i18n="getAppText">Book and manage your services quickly with NODO on mobile.</p>
+            <div class="nodo-footer__buttons">
+              <a class="nodo-footer__store-link nodo-footer__store-link--apple is-disabled-link" href="#" aria-label="Download on the App Store" aria-disabled="true" data-i18n-aria-label="appStoreLabel">
+                <img class="nodo-footer__store-badge nodo-footer__store-badge--apple" src="/static/icons/AppleEN.svg" alt="Download on the App Store" data-store-badge="apple" data-i18n-alt="appStoreLabel">
+              </a>
+              <a class="nodo-footer__store-link nodo-footer__store-link--google is-disabled-link" href="#" aria-label="Get it on Google Play" aria-disabled="true" data-i18n-aria-label="googlePlayLabel">
+                <img class="nodo-footer__store-badge nodo-footer__store-badge--google" src="/static/icons/GetItOnGoogleEN.svg" alt="Get it on Google Play" data-store-badge="google" data-i18n-alt="googlePlayLabel">
+              </a>
+            </div>
+          </div>
+          <div class="nodo-footer__artwork" aria-hidden="true">
+            <img src="/static/icons/telefonoNODO.svg" alt="" loading="lazy">
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="services" class="section services-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Service Categories</h2>
-        <p>
-          Discover a growing network of trusted services for homes, businesses, and urgent needs.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-item">Cleaning</div>
-        <div class="service-item">Plumbing</div>
-        <div class="service-item">Electrical</div>
-        <div class="service-item">Painting</div>
-        <div class="service-item">Handyman</div>
-        <div class="service-item">Landscaping</div>
-        <div class="service-item">HVAC</div>
-        <div class="service-item">Moving Help</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="clients-providers" class="section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Designed for clients and providers</h2>
-        <p>
-          NODO is being built to support both sides of the marketplace with a more modern and efficient experience.
-        </p>
-      </div>
-
-      <div class="split">
-        <div class="panel">
-          <h3>For Clients</h3>
-          <ul>
-            <li>Find services faster</li>
-            <li>Connect with trusted providers</li>
-            <li>Enjoy a simple and clear process</li>
-            <li>Access a more professional experience</li>
-          </ul>
+    <div class="nodo-footer__home-strip">
+      <div class="nodo-footer__home-inner">
+        <div class="nodo-footer__home-group nodo-footer__home-group--brand">
+          <a class="nodo-footer__home-brand" href="/" aria-label="NODO home" data-i18n-aria-label="homeLabel">
+            <img src="/static/icons/LogoBL-Am.svg" alt="NODO" loading="lazy">
+          </a>
         </div>
-
-        <div class="panel">
-          <h3>For Providers</h3>
-          <ul>
-            <li>Show your services professionally</li>
-            <li>Reach more potential clients</li>
-            <li>Grow your visibility</li>
-            <li>Be part of a modern service platform</li>
-          </ul>
+        <div class="nodo-footer__home-group nodo-footer__home-store-links">
+          <a class="nodo-footer__store-link nodo-footer__store-link--apple is-disabled-link" href="#" aria-label="Download on the App Store" aria-disabled="true" data-i18n-aria-label="appStoreLabel">
+            <img class="nodo-footer__store-badge nodo-footer__store-badge--apple" src="/static/icons/AppleEN.svg" alt="Download on the App Store" data-store-badge="apple-secondary" data-i18n-alt="appStoreLabel">
+          </a>
+          <a class="nodo-footer__store-link nodo-footer__store-link--google is-disabled-link" href="#" aria-label="Get it on Google Play" aria-disabled="true" data-i18n-aria-label="googlePlayLabel">
+            <img class="nodo-footer__store-badge nodo-footer__store-badge--google" src="/static/icons/GetItOnGoogleEN.svg" alt="Get it on Google Play" data-store-badge="google-secondary" data-i18n-alt="googlePlayLabel">
+          </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="container">
-      <div class="cta-box">
-        <h2>NODO is coming soon</h2>
-        <p>
-          We are building a trusted, modern, and practical way to connect services across Canada.
-        </p>
-        <a href="#contact" class="btn btn-primary">Contact Us</a>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contact" class="footer">
-    <div class="container footer-inner">
-      <div>
-        <strong style="color:#FFFFFF;">NODO</strong><br />
-        Trusted service connections in Canada
-      </div>
-      <div>
-        Email: your@email.com
-      </div>
-      <div>
-        © 2026 NODO. All rights reserved.
+        <div class="nodo-footer__home-group nodo-footer__home-social">
+          <a class="nodo-footer__social-link" href="https://www.facebook.com/people/NODO-Services/61583807501672/" target="_blank" rel="noopener noreferrer" aria-label="Visit NODO Services on Facebook" data-i18n-aria-label="facebookLabel">
+            <img src="/static/icons/facebook-color-svgrepo-com.svg" alt="Facebook" loading="lazy">
+          </a>
+          <a class="nodo-footer__social-link" href="https://www.instagram.com/nodoservices/" target="_blank" rel="noopener noreferrer" aria-label="Visit NODO Services on Instagram" data-i18n-aria-label="instagramLabel">
+            <img src="/static/icons/instagram-1-svgrepo-com.svg" alt="Instagram" loading="lazy">
+          </a>
+        </div>
+        <div class="nodo-footer__home-group nodo-footer__home-legal">
+          <div class="nodo-meta-links nodo-footer__links nodo-footer__home-links">
+            <a href="#" class="is-disabled-link" aria-disabled="true" data-i18n="footerTerms">Terms</a>
+            <a href="#" class="is-disabled-link" aria-disabled="true" data-i18n="footerPrivacy">Privacy</a>
+            <a href="#" class="is-disabled-link" aria-disabled="true" data-i18n="footerContact">Contact</a>
+          </div>
+          <div id="contact" class="nodo-footer__copyright nodo-footer__home-copyright">
+            &copy; 2026 NODO. <span data-i18n="footerRights">All rights reserved.</span>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
+
+  <button
+    class="nodo-video-launcher"
+    id="floating-video-open"
+    type="button"
+    aria-controls="floating-video"
+    aria-expanded="false"
+    data-i18n="watchVideo"
+  >Watch NODO video</button>
+
+  <section class="nodo-floating-video" id="floating-video" hidden aria-live="polite">
+    <div class="nodo-floating-video__panel" role="dialog" aria-label="NODO video" data-i18n-aria-label="videoLabel">
+      <button class="nodo-floating-video__close" id="floating-video-close" type="button" aria-label="Close video" data-i18n-aria-label="closeVideoLabel">✕</button>
+      <video
+        id="floating-video-player"
+        class="nodo-floating-video__player"
+        autoplay
+        controls
+        playsinline
+        preload="metadata"
+        controlslist="nodownload noplaybackrate"
+      ></video>
+      <button
+        class="nodo-video-sound"
+        id="floating-video-enable-sound"
+        type="button"
+        data-i18n="enableSound"
+        hidden
+      >Enable sound</button>
+    </div>
+  </section>
+
+  <script src="/static/js/home-i18n-video.js"></script>
 </body>
 </html>
