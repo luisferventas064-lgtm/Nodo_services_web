@@ -1,0 +1,75 @@
+.is-disabled-link {
+  cursor: default;
+}
+
+.is-disabled-link[aria-disabled="true"] {
+  pointer-events: none;
+}
+
+.nodo-floating-video {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1100;
+}
+
+.nodo-floating-video__panel {
+  width: min(360px, calc(100vw - 40px));
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(2, 6, 23, 0.35);
+  padding: 12px 12px 10px;
+  position: relative;
+}
+
+.nodo-floating-video__player {
+  width: 100%;
+  border-radius: 12px;
+  background: #020617;
+}
+
+.nodo-floating-video__close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 2px solid #ffffff;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nodo-floating-video__controls {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.nodo-floating-video__sound {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: rgba(15, 23, 42, 0.95);
+  color: #f8fafc;
+  font: inherit;
+  font-size: 0.86rem;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .nodo-floating-video {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+  }
+
+  .nodo-floating-video__panel {
+    width: min(360px, calc(100vw - 20px));
+  }
+}

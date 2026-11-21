@@ -1,0 +1,59 @@
+/* Only the two renamed client menu entries and the private identity component. */
+.nodo-subnav--client .nodo-subnav__item:nth-child(1)::before {
+  background-image: url('../icons/clipboard-list-svgrepo-com..svg');
+}
+.nodo-subnav--client .nodo-subnav__item:nth-child(3)::before {
+  background-image: url('../icons/productivity.svg');
+}
+.nodo-account-identity {
+  width: min(calc(100% - 32px), var(--nodo-page-max-width));
+  margin: 10px auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #334155;
+  text-align: right;
+  font-size: .82rem;
+}
+.nodo-account-identity > div { min-width: 0; overflow-wrap: anywhere; }
+.nodo-account-identity strong { display: inline; color: #0f172a; font-weight: 600; }
+.nodo-account-identity span { display: inline; font-size: .75rem; }
+.nodo-account-identity--provider {
+  width: min(100%, var(--nodo-shell-max-width));
+  max-width: var(--nodo-shell-max-width);
+  margin: 4px auto;
+  padding-inline: var(--nodo-space-5);
+}
+@media (max-width: 600px) {
+  .nodo-account-identity { margin-top: 8px; margin-bottom: 8px; }
+  .nodo-account-identity--provider { padding-inline: var(--nodo-space-4); }
+}
+
+/* Slightly offset copies reinforce only these SVG strokes without editing assets.
+   Existing pseudo-element boxes, active rings and focus/hover rules are retained. */
+.nodo-header--authenticated .nodo-subnav--client .nodo-subnav__item:nth-child(1)::before {
+  background-image: url('../icons/clipboard-list-svgrepo-com..svg');
+  background-size: 13.6px 13.6px;
+  background-position: center;
+}
+.nodo-header--authenticated .nodo-subnav--client .nodo-subnav__item:nth-child(5)::before {
+  background-image: url('../icons/usuario.svg'), url('../icons/usuario.svg'), url('../icons/usuario.svg'), url('../icons/usuario.svg');
+  background-position: calc(50% - .25px) center, calc(50% + .25px) center, center calc(50% - .25px), center calc(50% + .25px);
+}
+
+/* Provider navbar reuses client navbar visuals and only swaps icon assets. */
+.nodo-subnav--provider .nodo-subnav__item:nth-child(1)::before {
+  background-image: url('../icons/casePORTAFOLIOLINEAL.svg');
+}
+
+.nodo-subnav--provider .nodo-subnav__item:nth-child(2)::before {
+  background-image: url('../icons/catalog-svgrepo-com.svg');
+}
+
+.nodo-subnav--provider .nodo-subnav__item:nth-child(3)::before {
+  background-image: url('../icons/productivity.svg');
+}
+
+.nodo-subnav--provider .nodo-subnav__item:nth-child(4)::before {
+  background-image: url('../icons/PROVEDOR.svg');
+}

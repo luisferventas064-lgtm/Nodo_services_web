@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F172A">
+  <meta name="application-name" content="NODO">
+  <meta name="apple-mobile-web-app-title" content="NODO">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>NODO</title>
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="/static/icons/favicon.ico?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=2">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/static/icons/favicon.svg?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/static/site.webmanifest?v=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/nodo-design-system.css">
+  <link rel="stylesheet" href="/static/css/nodo-shared-footer.css">
+  <link rel="stylesheet" href="/static/css/nodo-account-navigation.css">
+  <link rel="stylesheet" href="/static/css/nodo-client-page-spacing.css">
+  <link rel="stylesheet" href="/static/css/nodo-public-home-recovery.css">
+  <link rel="stylesheet" href="/static/css/nodo-home-video.css">
+</head>
+<body class="nodo-app">
+  <div class="nodo-shell nodo-shell--public-home">
+    <header class="nodo-header nodo-header--authenticated nodo-header--public-home">
+      <div class="nodo-header-container nodo-header-container--public-home">
+        <div class="nodo-header-left">
+          <a href="/home/" class="nodo-logo nodo-logo--public-home">
+            <img src="/static/icons/LogoBL-Am.svg" alt="NODO" class="nodo-navbar-logo" loading="lazy">
+          </a>
+        </div>
+        <div class="nodo-header-right nodo-header-right--public-home">
+          <a href="#" class="nodo-link nodo-link--authenticated is-disabled-link" aria-disabled="true" data-i18n="headerLogin">Log in</a>
+          <a href="#" class="nodo-link nodo-link--authenticated is-disabled-link" aria-disabled="true" data-i18n="headerSignup">Sign up</a>
+          <div class="nodo-lang">
+            <div class="lang-toggle" aria-label="Language selector">
+              <button type="button" class="lang-toggle__option" data-lang-option="fr" aria-pressed="false" aria-label="Français">FR</button>
+              <span class="lang-toggle__divider" aria-hidden="true"></span>
+              <button type="button" class="lang-toggle__option" data-lang-option="en" aria-pressed="true" aria-label="English">EN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main class="page nodo-page-shell" id="main-content">
+    <div class="nodo-public-home nodo-page nodo-stack">
+      <section class="nodo-section nodo-hero nodo-hero--dark nodo-fade-in nodo-hero-redesign" id="top">
+        <img src="/static/icons/heroteamhome.svg" alt="NODO Team" class="nodo-hero-team-img" loading="lazy">
+        <div class="nodo-hero-overlay">
+          <div class="nodo-hero-redesign-copy">
+            <span class="nodo-hero-kicker nodo-hero-redesign-kicker" data-i18n="heroKicker">Trusted local marketplace</span>
+            <h1 class="nodo-hero-title nodo-hero-redesign-title" data-i18n="heroTitle">Find &amp; book trusted local services.</h1>
+            <p class="nodo-hero-text nodo-hero-redesign-text" data-i18n="heroText">
+              NODO connects customers with trusted providers across Quebec and Canada. Search by service type and filter results with verified requirements.
+            </p>
+            <div class="nodo-hero-services" aria-label="Popular services">
+              <div class="nodo-hero-service-item">
+                <a class="nodo-hero-service-card is-disabled-link" href="#" aria-label="Plumbing" aria-disabled="true">
+                  <img src="/static/icons/plomeria.svg" alt="Plumbing" loading="lazy">
+                </a>
+                <span class="nodo-hero-service-label" data-i18n="servicePlumbing">Plumbing</span>
+              </div>
+              <div class="nodo-hero-service-item">
+                <a class="nodo-hero-service-card is-disabled-link" href="#" aria-label="Cleaning" aria-disabled="true">
+                  <img src="/static/icons/clean.svg" alt="Cleaning" loading="lazy">
+                </a>
+                <span class="nodo-hero-service-label" data-i18n="serviceCleaning">Cleaning</span>
+              </div>
+              <div class="nodo-hero-service-item">
+                <a class="nodo-hero-service-card is-disabled-link" href="#" aria-label="Locksmith" aria-disabled="true">
+                  <img src="/static/icons/llaves.svg" alt="Locksmith" loading="lazy">
+                </a>
+                <span class="nodo-hero-service-label" data-i18n="serviceLocksmith">Locksmith</span>
+              </div>
+              <div class="nodo-hero-service-item">
+                <a class="nodo-hero-service-card is-disabled-link" href="#" aria-label="Construction" aria-disabled="true">
+                  <img src="/static/icons/construccion.svg" alt="Construction" loading="lazy">
+                </a>
+                <span class="nodo-hero-service-label" data-i18n="serviceConstruction">Construction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="clients-providers" class="nodo-section nodo-role-showcase nodo-role-showcase--navy-icons nodo-stack">
+        <div class="nodo-role-showcase__intro">
+          <div class="nodo-role-showcase__copy nodo-stack">
+            <h2 class="nodo-section-title nodo-role-showcase__title" data-i18n="rolesTitle">One platform, three roles</h2>
+            <span class="nodo-role-showcase__underline" aria-hidden="true"></span>
+            <p class="nodo-role-showcase__text" data-i18n="rolesText">
+              NODO supports discovery, coordination, and execution with a clear experience for every role in the service flow.
+            </p>
+          </div>
+        </div>
+        <div class="nodo-grid nodo-feature-grid nodo-role-showcase__grid">
+          <a href="#" class="nodo-role-card nodo-role-card--client is-disabled-link" aria-disabled="true">
+            <div class="nodo-role-card__header">
+              <span class="nodo-role-card__icon" aria-hidden="true">
+                <img src="/static/icons/usuario.svg" alt="Customer" loading="lazy">
+              </span>
+            </div>
+            <h3 class="nodo-role-card__title" data-i18n="customerLabel">Customer</h3>
+            <span class="nodo-role-card__underline" aria-hidden="true"></span>
+            <ul class="nodo-role-card__list">
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="customerBullet1">Find services faster</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="customerBullet2">Connect with trusted providers</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="customerBullet3">Enjoy a simple and clear process</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="customerBullet4">Access a more professional experience</span></li>
+            </ul>
+          </a>
+
+          <a href="#" class="nodo-role-card nodo-role-card--provider is-disabled-link" aria-disabled="true">
+            <div class="nodo-role-card__header">
+              <span class="nodo-role-card__icon" aria-hidden="true">
+                <img src="/static/icons/PROVEDOR.svg" alt="Providers" loading="lazy">
+              </span>
+            </div>
+            <h3 class="nodo-role-card__title" data-i18n="providerLabel">Providers</h3>
+            <span class="nodo-role-card__underline" aria-hidden="true"></span>
+            <ul class="nodo-role-card__list">
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="providerBullet1">Show your services professionally</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="providerBullet2">Reach more potential clients</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="providerBullet3">Grow your visibility</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="providerBullet4">Be part of a modern service platform</span></li>
+            </ul>
+          </a>
+
+          <a href="#" class="nodo-role-card nodo-role-card--worker is-disabled-link" aria-disabled="true">
+            <div class="nodo-role-card__header">
+              <span class="nodo-role-card__icon" aria-hidden="true">
+                <img src="/static/icons/trabajador.svg" alt="Workers" loading="lazy">
+              </span>
+            </div>
+            <h3 class="nodo-role-card__title" data-i18n="workerLabel">Workers</h3>
+            <span class="nodo-role-card__underline" aria-hidden="true"></span>
+            <ul class="nodo-role-card__list">
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="workerBullet1">Accept opportunities when providers need support</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="workerBullet2">Work with more flexibility</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="workerBullet3">Join the service flow in a structured way</span></li>
+              <li class="nodo-role-card__list-item"><span class="nodo-role-check" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="M3.5 8.5 6.5 11.5 12.5 5.5"/></svg></span><span data-i18n="workerBullet4">Build visibility through the platform</span></li>
+            </ul>
+          </a>
+        </div>
+      </section>
+
+      <section class="nodo-section nodo-how-it-works nodo-stack">
+        <div class="nodo-how-it-works__header nodo-stack">
+          <h2 class="nodo-section-title nodo-how-it-works__title" data-i18n="howTitle">How it works</h2>
+          <p class="nodo-how-it-works__subtitle" data-i18n="howSubtitle">Find trusted providers in three simple steps.</p>
+        </div>
+        <div class="nodo-how-it-works__flow" aria-label="How it works steps">
+          <article class="nodo-how-it-works__card">
+            <span class="nodo-how-it-works__number">01</span>
+            <div class="nodo-how-it-works__icon-wrap" aria-hidden="true"><img src="/static/icons/buscar.svg" alt="" class="nodo-how-it-works__icon" loading="lazy"></div>
+            <h3 class="nodo-how-it-works__card-title" data-i18n="howStep1Title">Choose a service</h3>
+            <p class="nodo-how-it-works__card-text" data-i18n="howStep1Text">Browse categories and select the service you need.</p>
+          </article>
+          <div class="nodo-how-it-works__connector" aria-hidden="true"><img src="/static/icons/arrowcircle.svg" alt="" loading="lazy"></div>
+          <article class="nodo-how-it-works__card">
+            <span class="nodo-how-it-works__number">02</span>
+            <div class="nodo-how-it-works__icon-wrap" aria-hidden="true"><img src="/static/icons/checkshieldCERITICATELINEAL.svg" alt="" class="nodo-how-it-works__icon" loading="lazy"></div>
+            <h3 class="nodo-how-it-works__card-title" data-i18n="howStep2Title">Request confidently</h3>
+            <p class="nodo-how-it-works__card-text" data-i18n="howStep2Text">Compare verified providers and submit your request.</p>
+          </article>
+          <div class="nodo-how-it-works__connector" aria-hidden="true"><img src="/static/icons/arrowcircle.svg" alt="" loading="lazy"></div>
+          <article class="nodo-how-it-works__card">
+            <span class="nodo-how-it-works__number">03</span>
+            <div class="nodo-how-it-works__icon-wrap" aria-hidden="true"><img src="/static/icons/checkmarkCircle.svg" alt="" class="nodo-how-it-works__icon" loading="lazy"></div>
+            <h3 class="nodo-how-it-works__card-title" data-i18n="howStep3Title">Track &amp; close</h3>
+            <p class="nodo-how-it-works__card-text" data-i18n="howStep3Text">Follow progress, complete the service and leave a review.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="nodo-footer nodo-footer--home">
+    <section class="nodo-footer__promo-wrap" aria-labelledby="app">
+      <div class="nodo-footer__inner">
+        <div class="nodo-footer__promo">
+          <div class="nodo-footer__content">
+            <h3 id="app" class="nodo-footer__title" data-i18n="getApp">Get the app</h3>
+            <p class="nodo-footer__text" data-i18n="getAppText">Book and manage your services quickly with NODO on mobile.</p>
+            <div class="nodo-footer__buttons">
+              <a class="nodo-footer__store-link nodo-footer__store-link--apple is-disabled-link" href="#" aria-label="Download on the App Store" aria-disabled="true">
+                <img class="nodo-footer__store-badge nodo-footer__store-badge--apple" src="/static/icons/AppleEN.svg" alt="Download on the App Store" data-store-badge="apple">
+              </a>
+              <a class="nodo-footer__store-link nodo-footer__store-link--google is-disabled-link" href="#" aria-label="Get it on Google Play" aria-disabled="true">
+                <img class="nodo-footer__store-badge nodo-footer__store-badge--google" src="/static/icons/GetItOnGoogleEN.svg" alt="Get it on Google Play" data-store-badge="google">
+              </a>
+            </div>
+          </div>
+          <div class="nodo-footer__artwork" aria-hidden="true">
+            <img src="/static/icons/telefonoNODO.svg" alt="" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="nodo-footer__home-strip">
+      <div class="nodo-footer__home-inner">
+        <div class="nodo-footer__home-group nodo-footer__home-group--brand">
+          <a class="nodo-footer__home-brand" href="/home/" aria-label="NODO home">
+            <img src="/static/icons/LogoBL-Am.svg" alt="NODO" loading="lazy">
+          </a>
+        </div>
+        <div class="nodo-footer__home-group nodo-footer__home-store-links">
+          <a class="nodo-footer__store-link nodo-footer__store-link--apple is-disabled-link" href="#" aria-label="Download on the App Store" aria-disabled="true">
+            <img class="nodo-footer__store-badge nodo-footer__store-badge--apple" src="/static/icons/AppleEN.svg" alt="Download on the App Store" data-store-badge="apple-secondary">
+          </a>
+          <a class="nodo-footer__store-link nodo-footer__store-link--google is-disabled-link" href="#" aria-label="Get it on Google Play" aria-disabled="true">
+            <img class="nodo-footer__store-badge nodo-footer__store-badge--google" src="/static/icons/GetItOnGoogleEN.svg" alt="Get it on Google Play" data-store-badge="google-secondary">
+          </a>
+        </div>
+        <div class="nodo-footer__home-group nodo-footer__home-social">
+          <a class="nodo-footer__social-link" href="https://www.facebook.com/people/NODO-Services/61583807501672/" target="_blank" rel="noopener noreferrer" aria-label="Visit NODO Services on Facebook">
+            <img src="/static/icons/facebook-color-svgrepo-com.svg" alt="Facebook" loading="lazy">
+          </a>
+          <a class="nodo-footer__social-link" href="https://www.instagram.com/nodoservices/" target="_blank" rel="noopener noreferrer" aria-label="Visit NODO Services on Instagram">
+            <img src="/static/icons/instagram-1-svgrepo-com.svg" alt="Instagram" loading="lazy">
+          </a>
+        </div>
+        <div class="nodo-footer__home-group nodo-footer__home-legal">
+          <div class="nodo-meta-links nodo-footer__links nodo-footer__home-links">
+            <a href="#" class="is-disabled-link" aria-disabled="true" data-i18n="footerTerms">Terms</a>
+            <a href="#" class="is-disabled-link" aria-disabled="true" data-i18n="footerPrivacy">Privacy</a>
+            <a href="#" class="is-disabled-link" aria-disabled="true" data-i18n="footerContact">Contact</a>
+          </div>
+          <div id="contact" class="nodo-footer__copyright nodo-footer__home-copyright">
+            &copy; 2026 NODO. <span data-i18n="footerRights">All rights reserved.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <section class="nodo-floating-video" id="floating-video" hidden aria-live="polite">
+    <div class="nodo-floating-video__panel" role="dialog" aria-label="NODO video">
+      <button class="nodo-floating-video__close" id="floating-video-close" type="button" aria-label="Close video">✕</button>
+      <video id="floating-video-player" class="nodo-floating-video__player" autoplay muted playsinline controlslist="nodownload noplaybackrate"></video>
+      <div class="nodo-floating-video__controls">
+        <button id="floating-video-sound" class="nodo-floating-video__sound" type="button" aria-pressed="false">Sound off</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="/static/js/home-i18n-video.js"></script>
+</body>
+</html>

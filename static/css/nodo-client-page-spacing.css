@@ -1,0 +1,15 @@
+/* Loaded only for client sessions. Requests remains the approved reference.
+   Its identity margin-bottom (8px) + shell padding-top (2px) totals 10px.
+   Limit these overrides to the five page roots; preserve all other spacing. */
+main.nodo-page-shell:has(> :is(.marketplace-page--guided, .nodo-history, .nodo-client-billing, .client-profile-page)) {
+  padding-top: 2px;
+}
+
+/* Home shares the authenticated navbar but does not render account identity. */
+main.nodo-page-shell:has(> .nodo-public-home) {
+  padding-top: 10px;
+}
+
+main.nodo-page-shell > :is(.nodo-public-home, .marketplace-page--guided, .nodo-history, .nodo-client-billing, .client-profile-page) {
+  padding-top: 0;
+}

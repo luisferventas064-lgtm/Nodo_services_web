@@ -1,0 +1,37 @@
+/* Shared interior footer only. Home retains its approved override and styles. */
+.nodo-footer:not(.nodo-footer--home) .nodo-footer__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+.nodo-footer:not(.nodo-footer--home) .nodo-footer__title,
+.nodo-footer:not(.nodo-footer--home) .nodo-footer__links,
+.nodo-footer:not(.nodo-footer--home) .nodo-footer__copyright { margin: 0; }
+.nodo-footer:not(.nodo-footer--home) .nodo-footer__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+}
+.nodo-footer:not(.nodo-footer--home) .nodo-footer__artwork {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  max-width: 100%;
+  margin-left: 8px;
+}
+.nodo-footer:not(.nodo-footer--home) .nodo-footer__artwork img {
+  display: block;
+  width: auto;
+  height: 120px;
+  max-width: 100%;
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .nodo-footer:not(.nodo-footer--home) .nodo-footer__buttons { gap: 10px; }
+  .nodo-footer:not(.nodo-footer--home) .nodo-footer__artwork { margin-left: 0; }
+  .nodo-footer:not(.nodo-footer--home) .nodo-footer__artwork img { height: 100px; }
+}
