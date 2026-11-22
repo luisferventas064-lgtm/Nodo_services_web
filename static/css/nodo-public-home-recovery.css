@@ -506,73 +506,182 @@ main.nodo-page-shell:has(> .nodo-public-home) {
 }
 
 @media (max-width: 640px) {
-  .nodo-logo-reveal {
-    min-height: 126px;
-    flex-direction: column;
+  .nodo-shell--public-home {
+    padding: 8px 12px 0;
+  }
+
+  .nodo-shell--public-home .nodo-header {
+    border-radius: 18px;
+  }
+
+  .nodo-shell--public-home .nodo-header-container--public-home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    min-height: 0;
+    padding: 7px 10px;
+    gap: 6px;
+  }
+
+  .nodo-shell--public-home .nodo-header-left,
+  .nodo-shell--public-home .nodo-header-right {
+    flex-direction: row;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .nodo-shell--public-home .nodo-header-left {
+    flex: 0 0 auto;
+  }
+
+  .nodo-shell--public-home .nodo-header-right.nodo-header-right--public-home {
+    flex: 1 1 auto;
+    justify-content: flex-end;
     gap: 4px;
-    padding: 14px 18px;
+  }
+
+  .nodo-shell--public-home .nodo-link--authenticated {
+    min-height: 26px;
+    padding: 0 6px;
+    font-size: 10px;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .nodo-shell--public-home .nodo-logo--public-home .nodo-navbar-logo {
+    width: 74px;
+  }
+
+  .nodo-shell--public-home .lang-toggle {
+    min-height: 26px;
+    padding: 1px;
+  }
+
+  .nodo-shell--public-home .lang-toggle__option {
+    min-width: 28px;
+    min-height: 24px;
+    padding: 0 6px;
+    font-size: 10px;
+  }
+
+  main.nodo-page-shell:has(> .nodo-public-home) {
+    padding: 10px 12px 18px;
+  }
+
+  .nodo-public-home > .nodo-section + .nodo-section {
+    margin-top: 12px;
+  }
+
+  .nodo-logo-reveal {
+    min-height: 78px;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 12px;
+    border-radius: 16px;
   }
 
   .nodo-logo-reveal__canvas {
-    width: 156px;
-    height: 74px;
+    width: 118px;
+    height: 56px;
   }
 
   .nodo-logo-reveal__message {
-    font-size: 1rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    opacity: 0.88;
+    letter-spacing: 0.03em;
   }
 
   .nodo-public-home .nodo-hero-redesign {
-    min-height: 520px;
-    padding: 18px;
+    min-height: 0;
+    padding: 0;
+    border-radius: 16px;
+    border-color: rgba(255, 255, 255, 0.08);
+    background: #334155;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1);
   }
 
   .nodo-public-home .nodo-hero-team-img {
-    min-height: 520px;
+    display: none;
   }
 
   .nodo-public-home .nodo-hero-overlay {
-    justify-content: center;
-    align-items: flex-end;
-    padding: 20px 16px 18px;
+    position: static;
+    inset: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 14px 12px 12px;
     box-sizing: border-box;
   }
 
   .nodo-public-home .nodo-hero-redesign-copy {
     max-width: none;
     width: 100%;
-    gap: 12px;
+    gap: 8px;
   }
 
   .nodo-public-home .nodo-hero-redesign-kicker {
     align-self: flex-start;
+    min-height: 20px;
+    padding: 2px 8px;
+    font-size: 10px;
+    border-color: rgba(250, 204, 21, 0.62);
+    background: rgba(234, 179, 8, 0.14);
+    color: #fef3c7;
   }
 
   .nodo-public-home .nodo-hero-redesign-title {
-    margin: 0 0 6px;
-    font-size: clamp(1.85rem, 7vw, 2.15rem);
-    line-height: 1.12;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.32rem, 6.2vw, 1.58rem);
+    line-height: 1.16;
+    text-shadow: none;
   }
 
   .nodo-public-home .nodo-hero-redesign-text {
-    font-size: 0.92rem;
-    line-height: 1.45;
-    max-width: 34ch;
+    color: rgba(248, 250, 252, 0.9);
+    font-size: 0.82rem;
+    line-height: 1.36;
+    max-width: none;
   }
 
   .nodo-public-home .nodo-hero-services {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px 12px;
+    gap: 8px;
     width: 100%;
-    margin-top: 6px;
+    margin-top: 2px;
+  }
+
+  .nodo-public-home .nodo-hero-service-item {
+    gap: 6px;
+  }
+
+  .nodo-public-home .nodo-hero-service-card {
+    width: 58px;
+    height: 58px;
+    min-height: 58px;
+    padding: 10px;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+  }
+
+  .nodo-public-home .nodo-hero-service-card img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nodo-public-home .nodo-hero-service-label {
+    font-size: 10px;
+    line-height: 1.15;
   }
 
   .nodo-public-home .nodo-role-showcase,
   .nodo-public-home .nodo-how-it-works {
-    padding: 16px 14px;
+    padding: 12px 10px;
     border: 0;
-    border-radius: 18px;
+    border-radius: 14px;
     box-shadow: none;
   }
 
@@ -582,94 +691,243 @@ main.nodo-page-shell:has(> .nodo-public-home) {
   }
 
   .nodo-public-home .nodo-role-showcase__copy {
-    gap: 10px;
+    gap: 6px;
   }
 
   .nodo-public-home .nodo-role-showcase__text {
-    font-size: 0.92rem;
-    line-height: 1.45;
+    font-size: 0.8rem;
+    line-height: 1.35;
   }
 
   .nodo-public-home .nodo-role-showcase__grid {
-    gap: 12px;
-  }
-
-  .nodo-public-home .nodo-role-card {
-    gap: 12px;
-    padding: 16px 14px;
-    border: 0;
-    border-radius: 16px;
-    box-shadow: none;
-  }
-
-  .nodo-public-home .nodo-role-card__header {
-    padding: 4px 0 0;
-  }
-
-  .nodo-public-home .nodo-role-card__icon {
-    width: 78px;
-    height: 78px;
-  }
-
-  .nodo-public-home .nodo-role-card__title {
-    font-size: 1.35rem;
-    font-weight: 700;
-  }
-
-  .nodo-public-home .nodo-role-card__list {
     gap: 8px;
   }
 
+  .nodo-public-home .nodo-role-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 10px;
+    row-gap: 6px;
+    padding: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    border-radius: 12px;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .nodo-public-home .nodo-role-card__header {
+    grid-row: 1;
+    padding: 0;
+  }
+
+  .nodo-public-home .nodo-role-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nodo-public-home .nodo-role-card__title {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .nodo-public-home .nodo-role-card__underline {
+    display: none;
+  }
+
+  .nodo-public-home .nodo-role-card__list {
+    grid-column: 1 / -1;
+    margin: 0;
+    gap: 5px;
+  }
+
   .nodo-public-home .nodo-role-card__list-item {
-    grid-template-columns: 18px minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: 14px minmax(0, 1fr);
+    gap: 7px;
     color: #334155;
-    font-size: 15.36px;
-    line-height: 23.808px;
+    font-size: 12px;
+    line-height: 1.32;
   }
 
   .nodo-public-home .nodo-role-check {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     margin-top: 0;
     color: #EAB308;
   }
 
   .nodo-public-home .nodo-how-it-works__header {
-    gap: 8px;
+    gap: 4px;
     text-align: left;
     align-items: flex-start;
   }
 
   .nodo-public-home .nodo-how-it-works__subtitle {
-    font-size: 0.92rem;
-    line-height: 1.45;
+    font-size: 0.8rem;
+    line-height: 1.35;
   }
 
   .nodo-public-home .nodo-how-it-works__flow {
-    gap: 10px;
+    gap: 6px;
   }
 
   .nodo-public-home .nodo-how-it-works__card {
-    gap: 10px;
-    padding: 14px 12px;
-    border: 0;
-    border-radius: 14px;
+    grid-template-columns: auto auto minmax(0, 1fr);
+    align-items: center;
+    justify-items: start;
+    gap: 6px;
+    min-height: 0;
+    padding: 8px 9px;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    border-radius: 10px;
     box-shadow: none;
+    text-align: left;
+    background: rgba(248, 250, 252, 0.86);
+  }
+
+  .nodo-public-home .nodo-how-it-works__number {
+    width: 26px;
+    height: 26px;
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
   }
 
   .nodo-public-home .nodo-how-it-works__icon-wrap {
-    border: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: transparent;
+    padding: 0;
     box-shadow: none;
   }
 
+  .nodo-public-home .nodo-how-it-works__icon {
+    width: 20px;
+    height: 20px;
+  }
+
   .nodo-public-home .nodo-how-it-works__card-title {
-    font-size: 1.04rem;
+    margin: 0;
+    font-size: 0.83rem;
+    line-height: 1.25;
   }
 
   .nodo-public-home .nodo-how-it-works__card-text {
-    font-size: 0.9rem;
-    line-height: 1.45;
+    grid-column: 3;
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .nodo-footer--home .nodo-footer__promo-wrap {
+    padding: 0 0 8px;
+  }
+
+  .nodo-footer--home .nodo-footer__promo {
+    row-gap: 8px;
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .nodo-footer--home .nodo-footer__content {
+    border-top-width: 2px;
+    padding-top: 10px;
+  }
+
+  .nodo-footer--home .nodo-footer__title {
+    margin-bottom: 4px;
+    font-size: 1rem;
+  }
+
+  .nodo-footer--home .nodo-footer__text {
+    margin: 0 0 8px;
+    font-size: 0.8rem;
+    line-height: 1.34;
+  }
+
+  .nodo-footer--home .nodo-footer__promo .nodo-footer__buttons {
+    margin-top: 0;
+    gap: 6px;
+  }
+
+  .nodo-footer--home .nodo-footer__artwork {
+    display: none;
+  }
+
+  .nodo-footer .nodo-footer__home-strip {
+    padding: 8px 0;
+  }
+
+  .nodo-footer .nodo-footer__home-store-links {
+    display: none;
+  }
+
+  .nodo-footer .nodo-footer__home-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    justify-items: stretch;
+    align-items: center;
+    gap: 6px 10px;
+  }
+
+  .nodo-footer .nodo-footer__home-group + .nodo-footer__home-group {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .nodo-footer .nodo-footer__home-group--brand {
+    justify-self: start;
+    justify-content: flex-start;
+  }
+
+  .nodo-footer .nodo-footer__home-brand img {
+    height: 30px;
+  }
+
+  .nodo-footer .nodo-footer__home-social {
+    justify-self: end;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .nodo-footer .nodo-footer__social-link {
+    width: 26px;
+    height: 26px;
+  }
+
+  .nodo-footer .nodo-footer__home-legal {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .nodo-footer .nodo-footer__home-links {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .nodo-footer .nodo-footer__home-links a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .nodo-footer .nodo-footer__home-links a + a::before {
+    margin: 0 6px;
+  }
+
+  .nodo-footer .nodo-footer__home-copyright {
+    width: 100%;
+    font-size: 11px;
+    line-height: 1.25;
+    text-align: center;
   }
 }
 

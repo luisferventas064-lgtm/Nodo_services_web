@@ -21,7 +21,7 @@
       headerSignup: "Sign up",
       homeLabel: "NODO home",
       languageSelector: "Language selector",
-      logoRevealMessage: "Coming Soon",
+      logoRevealMessage: "Coming Soon · 2027",
       heroKicker: "Trusted local marketplace",
       heroTitle: "Find & book trusted local services.",
       heroText:
@@ -82,7 +82,7 @@
       headerSignup: "S'inscrire",
       homeLabel: "Accueil NODO",
       languageSelector: "Sélecteur de langue",
-      logoRevealMessage: "Bientôt disponible",
+      logoRevealMessage: "Bientôt disponible · 2027",
       heroKicker: "Place de marché locale de confiance",
       heroTitle: "Trouvez et réservez des services locaux de confiance.",
       heroText:

@@ -119,10 +119,26 @@
 }
 
 @media (max-width: 640px) {
+  body:has(.nodo-public-home) .nodo-video-launcher {
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    min-height: 38px;
+    padding: 8px 12px;
+    font-size: 0.74rem;
+    max-width: min(46vw, 182px);
+    white-space: normal;
+    text-align: center;
+  }
+
   .nodo-video-launcher {
     top: auto;
     right: 12px;
     bottom: 12px;
+  }
+
+  body:has(.nodo-public-home) .nodo-floating-video {
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
   }
 
   .nodo-floating-video {
@@ -139,6 +155,10 @@
   .nodo-floating-video__panel {
     width: min(210px, calc(100vw - 24px));
     max-height: calc(100dvh - 24px);
+  }
+
+  body:has(.nodo-public-home) .nodo-floating-video__panel {
+    width: min(188px, calc(100vw - 20px));
   }
 
   .nodo-floating-video__player {
